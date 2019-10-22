@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Events\OrderReviewed;
+use App\Events\ExerciseUser;
 use App\Exceptions\CouponCodeUnavailableException;
 use App\Exceptions\InvalidRequestException;
 use App\Http\Requests\ApplyRefundRequest;
@@ -19,6 +20,7 @@ class OrdersController extends Controller
 {
     public function index(Request $request)
     {
+        event(new ExerciseUser($request->user()));
         $orders = Order::query()
             // 使用 with 方法预加载，避免N + 1问题
             ->with(['items.product', 'items.productSku'])
