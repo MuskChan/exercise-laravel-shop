@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ExerciseUser;
 use App\Models\User;
 use App\Handlers\ImageUploadHandler;
 
@@ -18,7 +19,7 @@ class UserController extends Controller
         return view('user.edit',['user' => $user]);
     }
 
-    public function update(Request $request, ImageUploadHandler $uploader, User $user)
+    public function update(ExerciseUser $request, ImageUploadHandler $uploader, User $user)
     {
         $data = $request->all();
 
