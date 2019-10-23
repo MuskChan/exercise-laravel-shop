@@ -17,6 +17,6 @@ class ExerciseUserListeners
     public function handle(ExerciseUser $event)
     {
         $user = $event->getUser();
-        dd($user->email);
+//        dd($user->email);
     }
 }
