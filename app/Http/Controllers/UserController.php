@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ExerciseUser;
 use App\Models\User;
 use App\Handlers\ImageUploadHandler;
+use Illuminate\Support\Collection;
 
 class UserController extends Controller
 {
@@ -14,8 +15,9 @@ class UserController extends Controller
         return view('user.index');
     }
 
-    public function edit(User $user)
+    public function edit(User $user) : ? object
     {
+//        dd($user->all()->toJson());
         return view('user.edit',['user' => $user]);
     }
 
