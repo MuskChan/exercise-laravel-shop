@@ -18,7 +18,9 @@ class UserController extends Controller
     public function edit(User $user) : ? object
     {
 //        dd($user->all()->toJson());
-        return view('user.edit',['user' => $user]);
+//        $user->all()->dd();
+//        dd($user->first());
+        return view('user.edit',['user' => $user]);//null;//
     }
 
     public function update(ExerciseUser $request, ImageUploadHandler $uploader, User $user)
