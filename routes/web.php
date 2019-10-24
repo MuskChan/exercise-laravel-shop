@@ -49,6 +49,9 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
     //用户中心
     Route::get('/users/{user}/edit','UserController@edit')->name('users.edit');
     Route::put('/users/{user}','UserController@update')->name('users.update');
+
+    //排行榜
+    Route::get('/leaderboards','LeaderboardController@index')->name('leaderboards.index');
 });
 
 Route::post('payment/alipay/notify', 'PaymentController@alipayNotify')->name('payment.alipay.notify');
