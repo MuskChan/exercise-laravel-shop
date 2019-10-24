@@ -17,10 +17,10 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($user as $vo)
+                        @foreach($users as $vo)
                             <tr>
-                                <td>{{ $vo['name'] }}</td>
-                                <td>{{ $vo['name'] }}</td>
+                                <td>{{ $vo->name }}</td>
+                                <td>{{ $vo->total_amount }}</td>
                             </tr>
                         @endforeach
                         </tbody>
