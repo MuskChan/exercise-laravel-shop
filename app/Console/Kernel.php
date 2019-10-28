@@ -26,7 +26,7 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
-        $schedule->command('laravelshop:exercise-user')->hourly();
+        $schedule->command('laravelshop:exercise-user')->everyFiveMinutes();
     }
 
     /**
