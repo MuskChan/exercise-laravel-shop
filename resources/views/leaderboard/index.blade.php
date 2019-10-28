@@ -19,8 +19,8 @@
                         <tbody>
                         @foreach($users as $vo)
                             <tr>
-                                <td>{{ $vo->name }}</td>
                                 <td>{{ $vo->total_amount }}</td>
+                                <td>{{ $vo->name }}</td>
                             </tr>
                         @endforeach
                         </tbody>

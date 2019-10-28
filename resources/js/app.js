@@ -28,3 +28,23 @@ require('./components/UserAddressesCreateAndEdit');
 const app = new Vue({
     el: '#app',
 });
+
+//
+// window.Echo.channel('test-event')
+//   .listen('ExampleEvent', (e) => {
+//     console.log(e);
+//   });
+
+
+// Echo.channel('push')
+//   .listen('.push.message', (e) => {
+//     alert('来了')
+//     console.log(e);
+//   });
+
+
+window.Echo.channel('push')
+  .listen('.push.message', (e) => {
+    alert('来了')
+    console.log(e);
+  });

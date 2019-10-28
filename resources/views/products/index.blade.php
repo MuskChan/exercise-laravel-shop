@@ -48,7 +48,9 @@
                             </div>
                         @endforeach
                     </div>
-                    <div class="float-right">{{ $products->appends($filters)->render() }}</div>
+                  {{--分页--}}
+                  <!--分页-->
+                  <div class="float-right">{{ $products->appends($filters)->render() }}</div>
                 </div>
             </div>
         </div>

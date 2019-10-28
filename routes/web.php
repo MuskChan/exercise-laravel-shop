@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\ExampleEvent;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,8 +11,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::redirect('/', '/products')->name('root');
+Route::redirect('/', '/home');
+//Route::redirect('/', '/home')->name('root');
 Route::get('products', 'ProductsController@index')->name('products.index');
 Route::get('products', 'ProductsController@index')->name('products.index');
 Auth::routes(['verify' => true]);
@@ -52,6 +53,17 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
 
     //排行榜
     Route::get('/leaderboards','LeaderboardController@index')->name('leaderboards.index');
+
+//    Route::get('test-broadcast', function(){
+//        broadcast(new \App\Events\ExampleEvent);
+//    });
+    Route::get('/echo', function () {
+        return view('echo');
+    });
+
+    Route::get('/push/{message}', function ($message) {
+        broadcast(new ExampleEvent($message));
+    });
 });
 
 Route::post('payment/alipay/notify', 'PaymentController@alipayNotify')->name('payment.alipay.notify');
