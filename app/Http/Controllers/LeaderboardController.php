@@ -6,11 +6,13 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
 use DB;
+use Cache;
 
 class LeaderboardController extends Controller
 {
     public function index(User $user)
     {
+//          dd(Cache::get('exercise_users'));
 //        $users = User::paginate(30);
 //        dd($users);
 //        $users = DB::select('select users.name,sum(orders.total_amount) total_amount

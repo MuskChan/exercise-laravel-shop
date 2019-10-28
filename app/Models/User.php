@@ -8,6 +8,7 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
+    use Traits\ExerciseUserHelper;
     use Notifiable;
 
     /**

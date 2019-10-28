@@ -30,7 +30,7 @@ class ExerciseUser extends Command
     {
         $this->info('开始');
 
-        $user->ExerciseCacheUsers();
+        $user->calculateUsers();
 
         $this->info('成功');
     }

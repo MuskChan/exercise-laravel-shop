@@ -22,6 +22,9 @@
                     <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">注册</a></li>
                 @else
                     <li class="nav-item">
+                      <a class="nav-link mt-1" href="{{ route('products.index') }}">商城</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link mt-1" href="{{ route('cart.index') }}"><i class="fa fa-shopping-cart"></i></a>
                     </li>
                     <li class="nav-item dropdown">
