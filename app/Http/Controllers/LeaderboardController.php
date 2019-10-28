@@ -12,7 +12,7 @@ class LeaderboardController extends Controller
 {
     public function index(User $user)
     {
-//        dd($user->getUsers());
+        dd($user->getUsers());
 
 //          dd(Cache::get('exercise_users'));
 //        $users = User::paginate(30);
