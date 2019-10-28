@@ -28,10 +28,10 @@ class ExerciseUser extends Command
      */
     public function handle(User $user)
     {
-        $this->info('开始');
+        $this->info('开始...');
 
         $user->calculateUsers();
 
-        $this->info('成功');
+        $this->info('用户缓存生成成功');
     }
 }
